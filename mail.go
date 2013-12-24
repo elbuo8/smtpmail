@@ -94,10 +94,7 @@ func (m *Mail) AddTo(email string) error {
 	if parsedAddess, e := mail.ParseAddress(email); e != nil {
 		return e
 	} else {
-		m.To = append(m.To, parsedAddess.Address)
-		if parsedAddess.Name != "" {
-			m.ToName = append(m.ToName, parsedAddess.Name)
-		}
+		m.AddReceipient(parsedAddess)
 		return nil
 	}
 }
