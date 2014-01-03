@@ -104,8 +104,8 @@ func (m *Mail) AddToName(name string) {
 	m.ToName = append(m.ToName, name)
 }
 
-// AddReceipient will take an already parsed mail.Address
-func (m *Mail) AddReceipient(receipient *mail.Address) {
+// AddRecipient will take an already parsed mail.Address
+func (m *Mail) AddRecipient(receipient *mail.Address) {
 	m.To = append(m.To, receipient.Address)
 	if receipient.Name != "" {
 		m.ToName = append(m.ToName, receipient.Name)
@@ -142,8 +142,8 @@ func (m *Mail) AddBCC(email string) error {
 	}
 }
 
-// AddReceipientBCC works like AddReceipient but for BCC
-func (m *Mail) AddReceipientBCC(email *mail.Address) {
+// AddRecipientBCC works like AddRecipient but for BCC
+func (m *Mail) AddRecipientBCC(email *mail.Address) {
 	m.Bcc = append(m.Bcc, email.Address)
 }
 
