@@ -99,6 +99,10 @@ func (m *Mail) AddTo(email string) error {
 	}
 }
 
+func (m *Mail) SetTos(emails []string) {
+	m.To = emails
+}
+
 // AddToName will add a new receipient name to mail
 func (m *Mail) AddToName(name string) {
 	m.ToName = append(m.ToName, name)
